@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type"
+          content="text/html; charset=UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+<h2>Form đăng ký</h2>
+
+
+<form th:action="@{/register}" method="post" th:object="${customer}">
+    <div>
+        <div class="form-group">
+            <label for="name">ho va ten</label>
+            <!--        <p th:if="${#fields.hasErrors()('name')}" th:errors="*{name}}"></p>-->
+            <input type="text" class="form-control" id="name" name="name" th:field="*{name}">
+        </div>
+
+
+        <div class="form-group">
+            <label for="cmnd">chung minh nhan dan</label>
+            <input type="text" class="form-control" id="cmnd" name="name" th:field="*{cmnd}">
+        </div>
+
+
+        <div class="form-group">
+            <label for="phone">so dien thoai</label>
+            <input type="text" class="form-control" id="phone" name="name" th:field="*{phone}">
+        </div>
+
+
+        <div class="form-group">
+            <label for="email">email nguoi dung</label>
+            <input type="text" class="form-control" id="email" name="name" th:field="*{email}">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+</form>
+</body>
+</html>
